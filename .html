@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Web | Hola Mundo Pro</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente moderna de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Dev<span>Project</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#tecnologias">Tecnologías</a></li>
+                    <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <span class="badge">Versión 1.0 • Listo para GitHub</span>
+            <h1>¡Hola, Mundo! <br><span>Construyendo el futuro web.</span></h1>
+            <p>Este es un proyecto de demostración diseñado con HTML5 semántico y CSS3 moderno. Ideal para practicar control de versiones con Git y despliegue en GitHub Pages.</p>
+            <div class="hero-buttons">
+                <a href="#caracteristicas" class="btn btn-primary">Explorar Proyecto</a>
+                <a href="https://github.com" target="_blank" class="btn btn-secondary">Ver en GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Características -->
+    <section id="caracteristicas" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Qué incluye este repositorio?</h2>
+                <p>Buenas prácticas de desarrollo frontend desde la primera línea de código.</p>
+            </div>
+            
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="icon">🚀</div>
+                    <h3>Código Limpio</h3>
+                    <p>Estructura semántica en HTML5 fácil de leer, mantener y escalar por cualquier desarrollador del equipo.</p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">🎨</div>
+                    <h3>CSS Moderno</h3>
+                    <p>Uso de variables CSS, Flexbox, CSS Grid, sombras suaves y transiciones fluidas sin depender de librerías externas.</p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">📱</div>
+                    <h3>100% Responsivo</h3>
+                    <p>Diseño adaptable que se visualiza correctamente en teléfonos móviles, tablets y monitores de escritorio.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Estadísticas / Tecnologías -->
+    <section id="tecnologias" class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>HTML5 & CSS3 Puro</p>
+            </div>
+            <div class="stat-item">
+                <h3>0 KB</h3>
+                <p>Dependencias Pesadas</p>
+            </div>
+            <div class="stat-item">
+                <h3>MIT</h3>
+                <p>Licencia Open Source</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto / Llamado a la acción -->
+    <section id="contacto" class="cta-section">
+        <div class="container cta-box">
+            <h2>¿Listo para hacer tu primer Commit?</h2>
+            <p>Clona este proyecto, modifica los colores en el archivo CSS y súbelo a tu perfil profesional.</p>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Mensaje de prueba enviado con éxito!');">
+                <input type="email" placeholder="Ingresa tu correo electrónico..." required>
+                <button type="submit" class="btn btn-primary">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Mi Proyecto Hola Mundo. Creado para GitHub.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Documentación</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
