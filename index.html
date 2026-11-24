@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChambaLink – Prototipo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" data-go="home"><span class="logo-mark">C</span>Chamba<b>Link</b></a>
+    <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+    <nav id="menu">
+      <a data-go="home">Inicio</a>
+      <a data-go="jobs">Ofertas</a>
+      <a data-go="biz">Negocios</a>
+      <a data-go="user">Mi panel</a>
+      <a data-go="negocio">Panel negocio</a>
+      <a data-go="admin">Admin</a>
+      <button class="btn ghost" data-go="auth">Ingresar</button>
+      <button class="btn" data-go="auth" data-tab="reg">Registrarse</button>
+    </nav>
+  </div>
+</header>
+
+<!-- INICIO -->
+<main id="home" class="view active">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <p class="tag">Huancayo y alrededores</p>
+        <h1>Encuentra chamba cerca de ti. Muestra tu negocio a todos.</h1>
+        <p class="lead">ChambaLink conecta a jóvenes que buscan trabajo con negocios y emprendedores de tu zona.</p>
+        <form class="search" id="heroSearch">
+          <input id="q" placeholder="¿Qué trabajo buscas? Ej: mozo, ventas" aria-label="Buscar empleo">
+          <select id="qd" aria-label="Distrito"><option value="">Todos los distritos</option><option>Huancayo</option><option>El Tambo</option><option>Chilca</option></select>
+          <button class="btn accent">Buscar empleos</button>
+        </form>
+        <div class="chips" id="homeChips"></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="float f1">💼 <span><b>Mozo/a medio tiempo</b><small>S/ 700 · Huancayo</small></span></div>
+        <div class="float f2">🍽️ <span><b>Sabor Wanka</b><small>⭐ 4.8 · Gastronomía</small></span></div>
+        <div class="float f3">✅ <span><b>Postulación enviada</b><small>hace 2 min</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="stats">
+      <div><b>120+</b><span>ofertas activas</span></div>
+      <div><b>45</b><span>negocios locales</span></div>
+      <div><b>3</b><span>distritos</span></div>
+      <div><b>200</b><span>usuarios a la vez</span></div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head"><h2>Ofertas recientes</h2><a class="link" data-go="jobs">Ver todas</a></div>
+    <div class="grid" id="homeJobs"></div>
+  </section>
+
+  <section class="wrap sec">
+    <h2>Cómo funciona</h2>
+    <div class="grid g3 steps">
+      <div class="card"><span class="ico">📝</span><h3>Crea tu perfil</h3><p>Regístrate como persona, negocio o cliente y sube tu CV.</p></div>
+      <div class="card"><span class="ico">🔎</span><h3>Busca por lugar</h3><p>Filtra ofertas y negocios por distrito, categoría o tipo de empleo.</p></div>
+      <div class="card"><span class="ico">💬</span><h3>Contacta directo</h3><p>Postula o escribe por WhatsApp al negocio en un clic.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="cta-band">
+      <div><h2>¿Tienes un negocio?</h2><p>Publica ofertas, productos y promociones gratis.</p></div>
+      <button class="btn accent" data-go="auth" data-tab="reg">Registrar mi negocio</button>
+    </div>
+  </section>
+</main>
+
+<!-- OFERTAS -->
+<main id="jobs" class="view">
+  <div class="wrap sec">
+    <h2>Ofertas laborales</h2>
+    <div class="filters">
+      <input id="jq" placeholder="Buscar por puesto o negocio" aria-label="Buscar">
+      <select id="jc" aria-label="Categoría"><option value="">Todas las categorías</option></select>
+      <select id="jd" aria-label="Distrito"><option value="">Todos los distritos</option><option>Huancayo</option><option>El Tambo</option><option>Chilca</option></select>
+    </div>
+    <p class="muted" id="jCount"></p>
+    <div class="grid" id="jobGrid"></div>
+  </div>
+</main>
+
+<!-- NEGOCIOS -->
+<main id="biz" class="view">
+  <div class="wrap sec">
+    <h2>Negocios y productos</h2>
+    <div class="chips dark" id="bizChips"></div>
+    <div class="grid" id="bizGrid"></div>
+  </div>
+</main>
+
+<!-- LOGIN / REGISTRO -->
+<main id="auth" class="view">
+  <div class="wrap sec auth-wrap">
+    <div class="auth-side">
+      <h2>Tu próxima chamba empieza aquí</h2>
+      <p>Cuenta de demostración: no se guarda ningún dato.</p>
+      <ul><li>✔ Postula en un clic</li><li>✔ Publica tu negocio</li><li>✔ Recibe avisos</li></ul>
+    </div>
+    <div class="card auth-card">
+      <div class="tabs"><button class="tab on" data-tab="login">Iniciar sesión</button><button class="tab" data-tab="reg">Registrarse</button></div>
+      <form id="formLogin" class="form">
+        <label>Correo<input type="email" value="diego@correo.com" required></label>
+        <label>Contraseña<input type="password" value="123456" required></label>
+        <label>Entrar como<select id="loginRole"><option value="user">Persona que busca empleo</option><option value="negocio">Negocio o emprendedor</option><option value="admin">Administrador</option></select></label>
+        <button class="btn full">Iniciar sesión</button>
+      </form>
+      <form id="formReg" class="form" hidden>
+        <label>Nombres<input required placeholder="Tu nombre"></label>
+        <label>Correo<input type="email" required placeholder="correo@ejemplo.com"></label>
+        <label>Contraseña<input type="password" required placeholder="Mínimo 8 caracteres"></label>
+        <label>Tipo de cuenta<select id="regRole"><option value="user">Persona que busca empleo</option><option value="negocio">Negocio o emprendedor</option><option value="user">Cliente</option></select></label>
+        <button class="btn full">Crear cuenta</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- PANEL USUARIO -->
+<main id="user" class="view">
+  <div class="wrap sec dash">
+    <aside class="card profile">
+      <div class="avatar">DP</div>
+      <h3>Diego Pérez</h3>
+      <p class="muted">Estudiante de Ing. de Sistemas · El Tambo</p>
+      <span class="badge ok">Cuenta verificada</span>
+      <div class="meter"><span style="width:80%"></span></div>
+      <small class="muted">Perfil completo al 80%</small>
+      <button class="btn ghost full" data-toast="CV actualizado (demo)">Subir CV</button>
+    </aside>
+    <div>
+      <h2>Mi panel</h2>
+      <div class="stats sm">
+        <div><b>5</b><span>postulaciones</span></div>
+        <div><b>2</b><span>en revisión</span></div>
+        <div><b>1</b><span>aceptada</span></div>
+      </div>
+      <h3>Mis postulaciones</h3>
+      <div class="list" id="applyList"></div>
+      <h3>Notificaciones</h3>
+      <div class="list">
+        <div class="row"><span>🔔 Sabor Wanka abrió tu postulación.</span><small>hoy</small></div>
+        <div class="row"><span>🔔 Nueva oferta de Tecnología en Chilca.</span><small>ayer</small></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- PANEL NEGOCIO -->
+<main id="negocio" class="view">
+  <div class="wrap sec">
+    <div class="sec-head"><div><h2>Restaurante Sabor Wanka</h2><span class="badge ok">Negocio verificado</span></div></div>
+    <div class="stats sm">
+      <div><b id="nOffers">3</b><span>ofertas publicadas</span></div>
+      <div><b>18</b><span>postulaciones</span></div>
+      <div><b>4.8</b><span>calificación</span></div>
+      <div><b>126</b><span>visitas</span></div>
+    </div>
+    <div class="two">
+      <div>
+        <h3>Ofertas publicadas</h3>
+        <div class="list" id="bizOffers"></div>
+      </div>
+      <form class="card form" id="newOffer">
+        <h3>Nueva oferta</h3>
+        <label>Puesto<input id="noT" required placeholder="Ej: Cocinero/a"></label>
+        <label>Sueldo (S/)<input id="noS" type="number" min="0" placeholder="900"></label>
+        <label>Horario<input id="noH" placeholder="8 am - 2 pm"></label>
+        <button class="btn full">Publicar oferta</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- ADMIN -->
+<main id="admin" class="view">
+  <div class="wrap sec">
+    <h2>Panel administrativo</h2>
+    <div class="stats sm">
+      <div><b>248</b><span>usuarios</span></div>
+      <div><b>45</b><span>negocios</span></div>
+      <div><b>120</b><span>ofertas</span></div>
+      <div><b id="pend">3</b><span>verificaciones pendientes</span></div>
+    </div>
+    <div class="two">
+      <div class="card">
+        <h3>Postulaciones por semana</h3>
+        <div class="bars" id="bars"></div>
+      </div>
+      <div class="card">
+        <h3>Verificaciones pendientes</h3>
+        <div class="list flat" id="verifList"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">ChambaLink · Prototipo universitario · Universidad Continental · Datos ficticios</div></footer>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
